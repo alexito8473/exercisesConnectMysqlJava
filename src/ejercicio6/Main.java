@@ -13,7 +13,7 @@ public class Main {
         int resultado;
         double porcentaje=0.10;
         PreparedStatement sentencia;
-        String sqlEliminarAsignatura ="DELETE FROM asignatura WHERE codAsig IN (SELECT codAsig FROM curso c join reparto r on c.codOe=r.codOe and c.codCurso= r.codCurso where c.codOe = ? and c.codCurso=?)" ;
+        String sqlEliminarAsignatura ="DELETE FROM asignatura WHERE codAsig IN (SELECT codAsig FROM reparto where c.codOe = ? and c.codCurso=?)" ;
         String sqlEliminarOfertaEducativa ="DELETE FROM ofertaeducativa WHERE codOe =?" ;
         try {
             connection = Constantes.connectServer( Constantes.URL, Constantes.USUARIO, Constantes.CONTRASEÑA);
