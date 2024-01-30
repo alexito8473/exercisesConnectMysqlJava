@@ -18,7 +18,7 @@ public class Main {
         int resultado;
         double porcentaje = 0.10;
         PreparedStatement sentencia;
-        String sqlActualizarAsignatura = "UPDATE asignatura set horasSemanales=horasSemanales+(horasSemanales*?), horasTotales=horasTotales+(horasTotales*?) WHERE codAsig in (SELECT codAsig FROM curso c join reparto r on c.codOe=r.codOe and c.codCurso= r.codCurso where c.codOe = ? and c.codCurso=?) AND codAsig LIKE ?";
+        String sqlActualizarAsignatura = "UPDATE asignatura set horasSemanales=horasSemanales+(horasSemanales*?), horasTotales=horasTotales+(horasTotales*?) WHERE codAsig in (SELECT codAsig FROM reparto  where codOe = ? and .codCurso=?) AND codAsig LIKE ?";
         try {
             connection = Constantes.connectServer( Constantes.URL, Constantes.USUARIO, Constantes.CONTRASEÑA);
             sentencia = connection.prepareStatement(sqlActualizarAsignatura);

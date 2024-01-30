@@ -28,18 +28,18 @@ public class Main {
         int horasTotales2 = 315;
         try {
             connection = Constantes.connectServer( Constantes.URL, Constantes.USUARIO, Constantes.CONTRASEÑA);
-            codTutor = obtenerCodTutor(connection, nombreTutor, apellidosTutor);
+            codTutor = obtenerProfesor(connection, nombreTutor, apellidosTutor);
             añadirCursoFP(connection, codFP, codCurso, codTutor);
             añadirAsignatura(connection, codAsig1, nombre1, horasSemanales1, horasTotales1);
             añadirAsignatura(connection, codAsig2, nombre2, horasSemanales2, horasTotales2);
-            añadirReparto(connection, codFP, codCurso, codAsig1, obtenerCodTutor(connection, "Carmelo", "Villegas Cruz"));
+            añadirReparto(connection, codFP, codCurso, codAsig1, obtenerProfesor(connection, "Carmelo", "Villegas Cruz"));
             añadirReparto(connection, codFP, codCurso, codAsig2, codTutor);
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    private String obtenerCodTutor(Connection connection, String nombre, String apellidos) throws SQLException {
+    private String obtenerProfesor(Connection connection, String nombre, String apellidos) throws SQLException {
         String sqlSelectProfesor = "SELECT codProf FROM horario.profesor where nombre= ? and apellidos= ? ";
         PreparedStatement sentenciaSelectTutor;
         ResultSet resultadoTutor;
