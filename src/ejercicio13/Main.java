@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 public class Main {
     private void ejercicio13() {
         Connection connection;
-        String codOe = "SMR";
+        String codOe = "DAM";
         String codCurso = "1A";
         String sql = "SELECT * from curso c join horario h on c.codCurso=h.codCurso and c.codOe=h.codOe join tramohorario t on t.codTramo=h.codTramo where c.codOe=? and c.codCurso=? order by  horaInicio,t.dia,codAsig DESC ";
         PreparedStatement sentencia;
