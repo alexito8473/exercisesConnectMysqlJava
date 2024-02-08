@@ -18,7 +18,6 @@ public class Main {
         Connection connection;
         LocalDateTime tiempoActual =LocalDateTime.now();
         String diaActual=tiempoActual.getDayOfWeek().getDisplayName(TextStyle.FULL,new Locale("es","Es")).toUpperCase();
-        String tramoPrueba = "09:00:00";
         String tramoReal = String.format("%s:%s:%s",tiempoActual.getHour(),tiempoActual.getMinute(),tiempoActual.getSecond());
         System.out.println(tramoReal);
         String sql = "Select r.codOe,r.codCurso,r.codAsig,p.nombre,p.apellidos,dia from horario h join reparto r on r.codOe=h.codOe and r.codCurso=h.codCurso and r.codAsig= h.codAsig join profesor p on p.codProf=r.codProf join tramohorario t on t.codTramo=h.codTramo where t.horaFin>=? and t.horaInicio<=? and dia=?";

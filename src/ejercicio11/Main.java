@@ -11,7 +11,7 @@ public class Main {
         Connection connection;
         String sqlSelectApellProf = "SELECT c.codOe,c.codCurso,codAsig,codTramo from curso c join horario h on c.codCurso=h.codCurso and c.codOe=h.codOe where c.codOe=? and c.codCurso=? and codAsig=?";
         String oferta = "DAM";
-        String curso = "2A";
+        String curso = "1A";
         String asignatura = "SIST";
         PreparedStatement mostrarSelect;
         boolean sinDatos=true;
@@ -35,7 +35,6 @@ public class Main {
             if(sinDatos){
                 System.out.println("Nos se ha encontrado ningún dato que coincida");
             }
-
         } catch (Exception e) {
             System.out.println(e);
         }
