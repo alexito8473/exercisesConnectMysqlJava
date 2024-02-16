@@ -10,7 +10,7 @@ public class Main {
         String codOe = "DAM";
         String codCurso = "2A";
         String codAsig = "AD";
-        String sql = " call codCurso_codAsig_toNameProf_hourWeek(?, ?, ?,?, ?)";
+        String sql = "{call codCurso_codAsig_toNameProf_hourWeek(?, ?, ?, ?, ?)}";
         CallableStatement sentencia;
         try {
             connection = Constantes.connectServer(Constantes.URL, Constantes.USUARIO, Constantes.CONTRASEÑA);
